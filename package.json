@@ -49,6 +49,7 @@
     "prettier": "^3.5.3",
     "puppeteer": "^24.7.2",
     "url-loader": "^4.1.1",
+    "uuid": "^11.1.0",
     "webpack": "^5.99.7",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.1",
