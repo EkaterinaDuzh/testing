@@ -1,27 +1,19 @@
-import validCards from "./validCards";
-import validate from "./validators";
+import validate from "./validator";
+import paySystem from "./paySystem";
 
-if (typeof document !== "undefined") {
-  const input = document.querySelector(".form-control");
-
-  input.addEventListener("input", () => {
-    const type = validCards(input.value);
-    const cards = document.querySelectorAll(".card");
-    cards.forEach((item) => {
-      item.classList.remove("active");
-    });
-    if (type) {
-      document.querySelector(type).classList.add("active");
-    }
+document.querySelector("#card-submit").addEventListener("click", (event) => {
+  event.preventDefault();
+  const num = document.querySelector("#numberCard-input").value;
+  if (validate(num)) {
+    paySystem(num);
+  } else {
+    alert("Invalid card number");
+  }
+});
+document.querySelector("#input-reset").addEventListener((event) => {
+  event.preventDefault();
+  document.form[0].reset();
+  document.querySelectorAll(".card-item").forEach((el) => {
+    el.classList.remove("active");
   });
-
-  input.parentNode.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const result = document.getElementById("result");
-    result.textContent = "";
-    validate(input.value)
-      ? (result.textContent = "Действующая карта")
-      : (result.textContent = "Введён некорректный номер карты!");
-    document.getElementById("card_number").value = " ";
-  });
-}
+});

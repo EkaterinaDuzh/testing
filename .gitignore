@@ -1,6 +1,7 @@
 dist
 doc
-node_modules
+.vscode
+.idea
 
 # Logs
 logs

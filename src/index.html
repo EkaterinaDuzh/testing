@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Card Validatort</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="page">
-        <h1 class="title">Validate Credit Card Numbers</h1>
-        <div class="wrapper">
-            <div class="wrapper-check-card">
-                <h2>Check your credit card number</h2>
-                <div class="container">
-                    <ul class="cards">
-                        <li class="card visa" title="Visa"></li>
-                        <li class="card master" title="Mastercard"></li>
-                        <li class="card amex" title="American Express"></li>
-                        <li class="card mir" title="Mir"></li>
-                        <li class="card discover" title="Discover"></li>
-                        <li class="card jcb" title="Jcb"></li>
-                    </ul>
-                </div>
-                <div class="filter-container">
-                    <form class="filter-widget-form">
-                        <input class="form-control" id="card_number" type="number" placeholder="Credit card number"
-                            title="" required>
-                        <button class="btn" type="submit">Click to Validate</button>
-                    </form>
-                </div>
-
-            </div>
+  <body>
+    <div class="container">
+      <h3>Check your credit card number</h3>
+      <ul class="cardList">
+        <li class="card-item cardVisa">
+          <span class="hidden">Visa</span>
+        </li>
+        <li class="card-item cardMastercard">
+          <span class="hidden">mastercard</span>
+        </li>
+        <li class="card-item cardMaestro">
+          <span class="hidden">mastercard</span>
+        </li>
+        <li class="card-item cardMir">
+          <span class="hidden">mir</span>
+        </li>
+        <li class="card-item cardAmericanExpress">
+          <span class="hidden">express</span>
+        </li>
+        <li class="card-item cardUnionPay">
+          <span class="hidden">unionpay</span>
+        </li>
+      </ul>
+      <form data-widget="card-form-widget">
+        <div class="form-control">
+          <input
+            id="numberCard-input"
+            type="text"
+            placeholder="Credit cart number"
+          />
         </div>
+        <button class="btn" id="card-submit">Click to validate</button>
+        <button class="btn" id="input-reset">Reset</button>
+      </form>
     </div>
-
-    <div id="result"></div>
-</body>
-
+  </body>
 </html>
